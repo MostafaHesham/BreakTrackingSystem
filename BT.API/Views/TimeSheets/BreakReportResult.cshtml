@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BT.Services.Models.EmployeeTimeSheetModels.EmployeeTimeSheetReportModel>
+
+@{
+    ViewData["Title"] = "Break Report Result";
+}
+<h1>Break Report Result</h1>
+<p>
+    <a asp-action="BreakReportFilter">New Search</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeePosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalWorkHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalBreakMins)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeePosition)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalWorkHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalBreakMins)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
